@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d2370a65a5c84dbd3c769404f8d35, type: 3}
+  m_Name: test sing
+  m_EditorClassIdentifier: 
+  description: "Test Song\n BPM 120 \n1/4\n"
+  beats:
+  - ExactTime: 0
+    startTime: 1900
+    endTime: 100
+    active: 1
+  - ExactTime: 500
+    startTime: 400
+    endTime: 600
+    active: 1
+  - ExactTime: 1000
+    startTime: 900
+    endTime: 1100
+    active: 0
+  - ExactTime: 1500
+    startTime: 1400
+    endTime: 1600
+    active: 1

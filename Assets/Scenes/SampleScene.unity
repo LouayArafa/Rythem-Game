@@ -909,6 +909,7 @@ GameObject:
   - component: {fileID: 1339565292}
   - component: {fileID: 1339565288}
   - component: {fileID: 1339565293}
+  - component: {fileID: 1339565294}
   m_Layer: 0
   m_Name: Gma
   m_TagString: Untagged
@@ -923,11 +924,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339565287}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5c988f357670de419df434d674b74f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Song: {fileID: 11400000, guid: 7aec04d95f12c2943ba3ee438b42f52b, type: 2}
+  animator: {fileID: 983739717}
+  x: 0
+  y: 0
   fmodEvent:
     Guid:
       Data1: 328363921
@@ -935,29 +940,29 @@ MonoBehaviour:
       Data3: 1499533746
       Data4: 306438213
     Path: event:/MainBeat
-  fmodEventPath: 
+  timelinePosition: 0
   Idle: 0
-  WaitingForPress: 0
+  WaitingForInput: 0
   PressTime: 0
   BeatTime: 0
   BPM: 120
   length_ms: 2000
   beatLength: 0
-  Song: {fileID: 11400000, guid: 7aec04d95f12c2943ba3ee438b42f52b, type: 2}
   BeatRange: 100
-  animator: {fileID: 983739717}
-  beatList: []
-  timelinePosition: 0
+  beatList:
+  - ExactTime: 100
+    startTime: 0
+    endTime: 200
+    startPressTime: 1
+    endPressTime: 200
   visualsOffset: 100
   visualCue: {fileID: 3403300531509496219, guid: 519d5a66df5c51e46aed79e0c79c474d, type: 3}
   visualCueCenter: {fileID: 466693305}
   visualCuePos: {fileID: 1521490556}
   visualCueDistance: 0
   perfectRange: 100
-  goodRange: 0
-  poorRange: 0
-  x: 0
-  y: 0
+  goodRange: 200
+  poorRange: 300
 --- !u!4 &1339565292
 Transform:
   m_ObjectHideFlags: 0
@@ -985,7 +990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0331c7d4c7ed4240a5ddf2a735e7956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  START_DETECTING: 1
+  START_DETECTING_BEAT: 0
+  START_DETECTING_INPUT: 0
   BPM: 120
   length_ms: 2000
   beatLength: 0
@@ -993,6 +999,29 @@ MonoBehaviour:
   Song: {fileID: 11400000, guid: 7aec04d95f12c2943ba3ee438b42f52b, type: 2}
   BeatRange: 100
   pressRange: 150
+  playerInput: 
+--- !u!114 &1339565294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339565287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeff08b13a67ae428ef347d264f1b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perfectTolerance: 50
+  fmodEvent:
+    Guid:
+      Data1: 328363921
+      Data2: 1252809791
+      Data3: 1499533746
+      Data4: 306438213
+    Path: event:/MainBeat
+  song: {fileID: 11400000, guid: 7aec04d95f12c2943ba3ee438b42f52b, type: 2}
+  animator: {fileID: 1852881939}
 --- !u!1 &1521490552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1127,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1852881939 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3614743395749354360, guid: f173fa809fe89bd4c9a5b56bf1650a24, type: 3}
+  m_PrefabInstance: {fileID: 9045473546019257415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9045473546019257415
 PrefabInstance:
   m_ObjectHideFlags: 0

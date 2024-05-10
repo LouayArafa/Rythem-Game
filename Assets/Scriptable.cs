@@ -19,6 +19,7 @@ public class Scriptable : ScriptableObject
         public float endPressTime;
         public bool active;
     }
+    public float Length_ms;
 
     public List<Beat> beats = new List<Beat>();
 

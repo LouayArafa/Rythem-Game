@@ -190,7 +190,7 @@ public class FMODTimeReader : MonoBehaviour
     //Incrementing a variable and loop it around number of the beats in the song
     private int Increment(int w)
     {
-        return w = (w + 1) % beatList.Count;
+        return (w + 1) % beatList.Count;
     }
 
 

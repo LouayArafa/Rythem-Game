@@ -13,20 +13,29 @@ MonoBehaviour:
   m_Name: test sing
   m_EditorClassIdentifier: 
   description: "Test Song\n BPM 120 \n1/4\n"
+  Length_ms: 2000
   beats:
   - ExactTime: 0
     startTime: 1900
     endTime: 100
+    startPressTime: 0
+    endPressTime: 150
     active: 1
   - ExactTime: 500
-    startTime: 400
+    startTime: 500
     endTime: 600
+    startPressTime: 500
+    endPressTime: 650
     active: 1
   - ExactTime: 1000
-    startTime: 900
+    startTime: 1000
     endTime: 1100
+    startPressTime: 1000
+    endPressTime: 1150
     active: 0
   - ExactTime: 1500
-    startTime: 1400
+    startTime: 1500
     endTime: 1600
+    startPressTime: 1500
+    endPressTime: 1650
     active: 1

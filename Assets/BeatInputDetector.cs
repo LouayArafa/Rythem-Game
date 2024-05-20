@@ -6,6 +6,7 @@ public class BeatInputDetector : MonoBehaviour
 {
     //[SerializeField] private float beatTolerance = 100f;
     [SerializeField] private float perfectTolerance = 50f;
+
     [SerializeField] private EventReference fmodEvent;
     [SerializeField] private Scriptable song; // Reference to the Scriptable Object containing beat information
     public Animator animator;
@@ -13,14 +14,21 @@ public class BeatInputDetector : MonoBehaviour
     private int currentBeatIndex = 0; // Index of the current beat being checked
     private bool beatStarted = false; // Flag to track if beat detection has started
     private bool eventStart = false;
+    public bool press = false;
 
-    private void Start()
+     void Start()
     {
+        Screen.orientation = ScreenOrientation.Portrait;
+
         // Initialize FMOD event instance
         eventInstance = RuntimeManager.CreateInstance(fmodEvent);
+        // Set target frame rate to 60 FPS
+        Application.targetFrameRate = 60;
+        // Disable VSync
+        QualitySettings.vSyncCount = 0;
     }
 
-    private void Update()
+     void Update()
     {
         // Check if beat detection has started
         if (!beatStarted && eventInstance.isValid())
@@ -30,8 +38,11 @@ public class BeatInputDetector : MonoBehaviour
             InvokeRepeating("CheckPlayerInput", 1f, 0.005f);
         }
     }
-
-    private void CheckPlayerInput()
+    public void Pressed()
+    {
+        press = true;
+    }
+    public void CheckPlayerInput()
     {
         // Start the song
         if (!eventStart)
@@ -58,9 +69,9 @@ public class BeatInputDetector : MonoBehaviour
         float timeDifference = Mathf.Abs(currentTime - expectedBeatTime);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || press == true)
         {
-
+            press = false;
         
         #region On Beat
         // Check for missed beats
@@ -76,7 +87,7 @@ public class BeatInputDetector : MonoBehaviour
                 {
                     Debug.Log("0 - Perfect Beat! Current Time: " + currentTime + ", Expected Beat Time: " + expectedBeatTime);
 
-                    animator.SetTrigger("Pulse");
+                    Hit();
 
 
 
@@ -93,7 +104,7 @@ public class BeatInputDetector : MonoBehaviour
                 {
                     Debug.Log("Index: " + currentBeatIndex + "- Perfect Beat! Current Time: " + currentTime + ", Expected Beat Time: " + expectedBeatTime);
 
-                    animator.SetTrigger("Pulse");
+                    Hit();
                     // Increment the beat index to check the next beat
 
                     currentBeatIndex = (currentBeatIndex + 1) % song.beats.Count;
@@ -147,8 +158,20 @@ public class BeatInputDetector : MonoBehaviour
         }
         #endregion
     }
+   
+    void Hit()
+    {
+        animator.SetTrigger("Pulse");
 
+    }
+    void Missed()
+    {
 
+    }
+    void OffBeat()
+    {
+
+    }
 }
 
 

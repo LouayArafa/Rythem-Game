@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8b135065-6067-48bd-9586-12911828d1d9}">
+		<property name="name">
+			<value>nuts</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a2141eb3-05b4-45f8-b5be-215d99e2a2af}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{025bb96f-a427-48d3-acaf-84b4eed72763}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{025bb96f-a427-48d3-acaf-84b4eed72763}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

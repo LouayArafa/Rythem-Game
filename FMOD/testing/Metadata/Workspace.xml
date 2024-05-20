@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{ab9f18d3-62e7-497c-a5e9-3fc677f163bf}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../BOOBS AND CATS/Assets/Fmod</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{76c4d71c-d432-4aea-af9d-69a08732989c}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{671f6da8-c7fd-49c1-8936-e75bdbc56ee7}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{60049edf-9fe0-4cef-afe0-8b582ab55da5}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{a2141eb3-05b4-45f8-b5be-215d99e2a2af}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{d5681c54-b0b7-45e3-99f9-a28f9d820799}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{69801cf0-0c64-4f62-aa88-03ef6c61f283}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{924d6855-daac-4cba-8f51-3564c88a89a6}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{be276773-c701-44b1-b1f3-6539a8d40d17}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{a27ee370-22b1-4043-88e0-091b869f493d}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{01b36f34-29df-400a-93f5-d4f3e72a36c6}</destination>
+		</relationship>
+	</object>
+</objects>
